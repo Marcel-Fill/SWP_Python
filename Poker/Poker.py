@@ -135,12 +135,7 @@ def checkHand(cardsUsed, showCards):
 
 if __name__ == '__main__':
     statistic = genStats()
-    #print(generateCards())
-    #print("---------------------------------------------------------")
-    #print(pickCards(generateCards()))
-    #print("---------------------------------------------------------")
     print(checkHand(pickCards(generateCards()), True))
-    print("---------------------------------------------------------")
     for i in range(100000):
         checkHand(pickCards(generateCards()), False)
     print(statistic)
