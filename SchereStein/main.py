@@ -1,7 +1,9 @@
 import random
 from OOP_Klassen import stein, schere, papier, spock, echse
 
+
 def initItem(nr, msg):
+    global steinAnz,schereAnz,papierAnz,spockAnz,echseAnz
     match nr:
         case 1:
             return stein.stein()
@@ -27,8 +29,12 @@ def checkMatch(nr):
         case other:
             return "A unexcpected error occured! Try again"
 
-if __name__ == "__main__":
-    computer = initItem(random.randint(1,5), "")
+
+def main():
+    comp = initItem(random.randint(1,5), "")
     player = initItem(int(input("Options:\nstein = 1, schere = 2, papier = 3, spock = 4, echse = 5\n\nChoose your Item: ")),"")
-    print("Player chose "+player.getItemName() + " vs " + computer.getItemName()+" Compiter chose")
-    print(checkMatch(player.getItemCompare(computer.getItemName())))
+    print("Player chose "+player.getItemName() + " vs " + comp.getItemName()+" Computer chose")
+    print(checkMatch(player.getItemCompare(comp.getItemName())))
+
+if __name__ == "__main__":
+    main()
