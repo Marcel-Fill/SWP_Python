@@ -3,7 +3,6 @@ from OOP_Klassen import stein, schere, papier, spock, echse
 
 
 def initItem(nr, msg):
-    global steinAnz,schereAnz,papierAnz,spockAnz,echseAnz
     match nr:
         case 1:
             return stein.stein()
