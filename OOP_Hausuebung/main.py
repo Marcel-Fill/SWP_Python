@@ -13,9 +13,11 @@ def createWorker(rang,name,abt,gender,f):
     f.addPerson(e)
     return e
 
-def runComany():
+def runCompany():
     f = createComp("YA YEET GmbH UND COKG")
     m1 = createWorker(rang.Rang.mitarbeiter,"JUSTUS","BWL",geschlecht.geschlecht.undefined,f)
+    
 
-if __name__ == "__main__":
-    runComany()
+if __name__ == "__main__": 
+    runCompany()
+    
