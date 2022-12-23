@@ -1,0 +1,48 @@
+import json
+from flask import Flask, render_template, request
+from flask_restful import Api
+import webbrowser
+import pandas as p
+import plotly
+import plotly.express as px
+
+app = Flask(__name__)
+api = Api(app)
+
+def getStatistic():
+    with open("SchereStein\saves.txt", "r") as s:
+        return json.load(s)
+
+@app.route('/',methods=["GET", "POST"])
+def start():
+    if request.method == "POST":
+        stats = getStatistic()
+        user = request.form.get("username")
+        userPos = stats[0].index(user)
+        userStats = stats[userPos+1]
+        keys = list(userStats.keys())
+        
+        outs = []
+        for i in range(0,3):
+            outs.append([keys[i], userStats[keys[i]]])
+        dO = p.DataFrame(outs, columns=["item", "anz"])
+        
+        items = []
+        for j in range(3,8):
+            items.append([keys[j], userStats[keys[j]]])
+        dI = p.DataFrame(items, columns=["item", "anz"])
+        
+        figO = px.bar(dO, x="item", y="anz")
+        graphO = json.dumps(figO, cls=plotly.utils.PlotlyJSONEncoder)
+        
+        figI = px.bar(dI, x="item", y="anz")
+        graphI = json.dumps(figI, cls=plotly.utils.PlotlyJSONEncoder)
+            
+        return render_template("stats.html", outs=graphO, items=graphI)
+    
+    if request.method == "GET":
+        return render_template("main.html")
+
+if __name__ == '__main__':
+    webbrowser.open("http://localhost:5000")
+    app.run()
