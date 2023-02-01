@@ -1,6 +1,6 @@
 import json
 
-class Player:
+class Spieler:
     
     def __init__(self, name):
         with open("SchereStein\saves.txt", "r") as e:
