@@ -2,19 +2,19 @@ import math
 import random
 
 class Elem:
-    def __init__(self, data = None, next=None): 
-        self.data = data
+    def __init__(self, objData = None, next=None): 
+        self.objData = objData
         self.next = next
 
     def __str__(self):
-        return str(self.data)
+        return str(self.objData)
 
 class List:
     def __init__(self):  
         self.head = None
   
-    def append(self, data):
-        newElem = Elem(data)
+    def append(self, objData):
+        newElem = Elem(objData)
         if(self.head):
             current = self.head
             while(current.next):
@@ -25,13 +25,13 @@ class List:
         
     def remove(self, elem):
         elemToDelete = self.head
-        if self.head.data == elem:
+        if self.head.objData == elem:
             self.head = self.head.next
             return
-        while not elemToDelete.next.data == elem:
+        while not elemToDelete.next.objData == elem:
             elemToDelete = elemToDelete.next
             if elemToDelete.next == None:
-                print("Couldnt remove")
+                print("Was not able to remove : Error 100129")
                 break
         elemToDelete.next = elemToDelete.next.next
 
@@ -84,7 +84,7 @@ class List:
             e = e.next
             if e == None:
                 return None
-        return e.data
+        return e.objData
     
     def __setitem__(self, index, val):
         e = self.head
@@ -94,13 +94,13 @@ class List:
             if e == None:
                 break
             e = e.next
-        e.data = val
+        e.objData = val
                     
     def split(self, parts):
         l = len(self)
         p = parts
         if parts > l:
-            print("List only has ", l, " elements to split in it!")
+            print("List only has ", l, " So you cant split it:) Error:100234")
             return
         splitLists = List()
         for i in range(parts):
@@ -126,10 +126,10 @@ class List:
         current = self.head
         info = "["
         while(current):
-            if type(current.data) == List:
-                info += current.data.getData() + ","
+            if type(current.objData) == List:
+                info += current.objData.getData() + ","
             else:
-                info += str(current.data) + ","
+                info += str(current.objData) + ","
             current = current.next
         info = info[:-1] + "]"
         return info
@@ -138,10 +138,10 @@ class List:
         current = self.head
         info = "["
         while(current):
-            if type(current.data) == List:
-                info += current.data.getData() + ","
+            if type(current.objData) == List:
+                info += current.objData.getData() + ","
             else:
-                info += str(current.data) + ","
+                info += str(current.objData) + ","
             current = current.next
         info = info[:-1] + "]"
         return info
