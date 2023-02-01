@@ -2,7 +2,6 @@ import math
 import random
 
 class Elem:
-  # constructor
     def __init__(self, data = None, next=None): 
         self.data = data
         self.next = next
@@ -10,13 +9,11 @@ class Elem:
     def __str__(self):
         return str(self.data)
 
-# A Linked List class with a single head node
 class List:
     def __init__(self):  
         self.head = None
   
-  # insertion method for the linked list
-    def add(self, data):
+    def append(self, data):
         newElem = Elem(data)
         if(self.head):
             current = self.head
@@ -42,12 +39,12 @@ class List:
         self.remove(self[index])
         
     def __len__(self):
-        l = 0
+        count = 0
         nextElem = self.head
         while not nextElem == None:
             nextElem = nextElem.next
-            l += 1
-        return l
+            count += 1
+        return count
     
     def index(self, elem):
         i = 0
@@ -68,17 +65,21 @@ class List:
         if a == b or a+1 == b:
             return self[a] if self[a] != None else None
         for i in range(int(a), int(b)):
-            items.add(self[i])
+            items.append(self[i])
         return items
+    
+    def bubble_sort(self):
+        n = len(self)
+        swapped = False
+        for i in range(n-1):
+            for j in range(0, n-i-1):
+                if self[j] > self[j+1]:
+                    swapped = True
+                    self[j], self[j+1] = self[j+1], self[j]
+                                       
 
-    def __getitem__(self, index, index2=None):
+    def __getitem__(self, index):
         e = self.head
-        if index2 != None:
-            info = "["
-            for i in range(index, index2):
-                info += str(self[i]) + ","
-            info = info[:-1] + "]"
-            return info
         while not self.index(e) == index:
             e = e.next
             if e == None:
@@ -106,13 +107,13 @@ class List:
             elemForPart = int(l/p)
             listPart = List()
             for j in range(len(self)-l,len(self)-l+elemForPart):
-                listPart.add(self[j])
-            splitLists.add(listPart)
+                listPart.append(self[j])
+            splitLists.append(listPart)
             p -= 1
             l -= elemForPart
         return splitLists  
     
-    def shuffle(self):
+    def shuffleList(self):
         for i in range(len(self)):
             rand = random.randint(0, len(self)-1)
             currPos = self[i]
@@ -133,7 +134,6 @@ class List:
         info = info[:-1] + "]"
         return info
 
-  # print method for the linked list
     def __str__(self):
         current = self.head
         info = "["
