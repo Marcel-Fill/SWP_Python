@@ -29,5 +29,6 @@ if __name__ == "__main__":
     list.bubble_sort()
     print(list)
     print(len(list))
-    
+    # set item without = get item
+    list[2]= 2
     
