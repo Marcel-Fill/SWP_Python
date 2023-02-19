@@ -1,4 +1,4 @@
-from OOP_Klassen.rang import rang
+from OOP_Klassen.rang import Rang
 from OOP_Klassen.geschlecht import geschlecht
 
 class Firma():
@@ -7,7 +7,7 @@ class Firma():
     def __init__(self,name):
         self.name = name 
         self.personen = []
-        self.personenProRang = {rang.mitarbeiter:0,rang.abteilungsLeiter:0}
+        self.personenProRang = {Rang.mitarbeiter:0,Rang.abteilungsLeiter:0}
         self.abteilungen = []
         self.mitArbeiterProAbt = {}
 
