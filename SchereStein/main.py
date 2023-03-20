@@ -6,7 +6,7 @@ def initDict():
     return {"sieg": 0, "unentschieden": 0, "verloren": 0, "schere": 0, "stein": 0, "papier": 0, "spock": 0, "echse": 0}
 
 def initPlayer(name):
-    return spieler.Player(name)
+    return spieler.Spieler(name)
 
 def initItem(nr, msg,p=None):
     match nr:
