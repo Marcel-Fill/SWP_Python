@@ -7,11 +7,6 @@ public interface Pizza {
 }
 
 
-
-
-
-
-
 class BerlinStagioni implements Pizza {
 
     @Override

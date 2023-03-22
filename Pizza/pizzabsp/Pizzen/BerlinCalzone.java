@@ -2,7 +2,7 @@ package pizzabsp.Pizzen;
 
 import pizzabsp.Pizza;
 
-class BerlinCalzone implements Pizza {
+public class BerlinCalzone implements Pizza {
     @Override
     public void bake(){
         System.out.println( "Pizza Calzone of Pizza Berlin is beeing baked");

@@ -2,7 +2,7 @@ package pizzabsp.Pizzeria;
 import pizzabsp.Pizza;
 import pizzabsp.Pizzen.*;
 
-class BerlinPizzeria extends Pizzeria {
+public class BerlinPizzeria extends Pizzeria {
 
     @Override
     protected Pizza createPizza(PizzaType sorte) {
