@@ -6,61 +6,11 @@ public interface Pizza {
     void pack();
 }
 
-class BerlinSalami implements Pizza {
 
-    @Override
-    public void bake() {
-        System.out.println( "Salamipizza of Pizza Berlin is beeing baked");
-    }
 
-    @Override
-    public void cut(){
-        System.out.println( "Salamipizza of Pizza Berlin is beeing cut");
-    }
 
-    @Override
-    public void pack(){
-        System.out.println( "Salamipizza of Pizza Berlin is beeing packaged");
-    }
 
-}
 
-class BerlinCalzone implements Pizza {
-    @Override
-    public void bake(){
-        System.out.println( "Pizza Calzone of Pizza Berlin is beeing baked");
-    }
-
-    @Override
-    public void cut(){
-        System.out.println( "Pizza Calzone of Pizza Berlin is beeing cut");
-    }
-
-    @Override
-    public void pack(){
-        System.out.println( "Pizza Calzone of Pizza Berlin is beeing packaged");
-    }
-
-}
-
-class BerlinHawaii implements Pizza {
-
-    @Override
-    public void bake(){
-        System.out.println( "Pizza Hawaii of Pizza Berlin is beeing baked");
-    }
-
-    @Override
-    public void cut(){
-        System.out.println( "Pizza Hawaii of Pizza Berlin is beeing cut");
-    }
-
-    @Override
-    public void pack(){
-        System.out.println( "Pizza Hawaii of Pizza Berlin is beeing packaged");
-    }
-
-}
 
 class BerlinStagioni implements Pizza {
 
