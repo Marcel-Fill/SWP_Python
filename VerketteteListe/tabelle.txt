@@ -1,7 +1,7 @@
             Single Linked   |   Double Linked   |   ArrayList
 append          n                   1                   n
 first elem      1                   1                   1
-len             n                   n                   n
+len             n                   n                   1
 remove index    n                   n                   1
 remove elem     n                   n                   n
 elem at n       n                   n                   1
