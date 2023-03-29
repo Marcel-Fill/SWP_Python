@@ -4,7 +4,7 @@ class ArrayList():
         self.size = 1
 
     def append(self, data):
-        def append_wrapper():
+        def append_wrap():
             for i in range(0, self.size):
                 l = len(self)
                 if self.ArrayList[i] == None:
@@ -12,34 +12,34 @@ class ArrayList():
                     return True
             return False
         
-        res = append_wrapper()
-        if res == False:
+        result = append_wrap()
+        if result == False:
             self.ArrayList = self.ArrayList + ([None]*self.size)
             self.size *= 2
             self.append(data)
         return
     
     def removeIndex(self, index):
-        def remove_wrapper():
+        def remove_wrap():
             self.ArrayList[index] = None
             if len(self) <= self.size/2:
                 return False
             return True
-        res = remove_wrapper()
-        if res == False:
+        result = remove_wrap()
+        if result == False:
             self.ArrayList = list(filter(lambda x: x != None, self.ArrayList))
             self.size /= 2
             
     def remove(self, data):
-        def remove_wrapper():
+        def remove_wrap():
             for i in range(len(self)-1):
                 if self.ArrayList[i] == data:
                     self.removeIndex(i)
             if len(self) <= self.size/2:
                 return False
             return True
-        res = remove_wrapper()
-        if res == False:
+        result = remove_wrap()
+        if result == False:
             self.ArrayList = list(filter(lambda x: x != None, self.ArrayList))
             self.size /= 2
                 
@@ -64,5 +64,4 @@ class ArrayList():
 if __name__ == "__main__":
     arraylist = ArrayList()
 
-    for i in range(9):
-        arraylist.append(i)
+
