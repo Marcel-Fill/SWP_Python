@@ -1,9 +1,9 @@
             Single Linked   |   Double Linked   |   ArrayList
 append          n                   1                   n
 first elem      1                   1                   1
-elem at n       n                   n                   1
-last elem       n                   1                   1
 len             n                   n                   n
 remove index    n                   n                   1
 remove elem     n                   n                   n
+elem at n       n                   n                   1
+last elem       n                   1                   1
 Sort(BUBBLE)    n^2                 n^2                 n^2
